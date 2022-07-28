@@ -24,12 +24,19 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    let newValue = String(value).slice(-2)
-    if(newValue.length === 2){
-      return newValue
-    } else if (newValue.length === 1){
-      return `0${newValue}`
+    if(String(value).length === 2){
+      return String(value)
+    } else if (String(value).length === 1){
+      return `0${value}`
     }
+
+    // Alternative 2
+    // let newValue = String(value).slice(-2)
+    // if(newValue.length === 2){
+    //   return newValue
+    // } else if (newValue.length === 1){
+    //   return `0${newValue}`
+    // }
 
     // Adam's solution
     // return value < 10 ? `0${value}` : `${value}`;
@@ -44,6 +51,6 @@ class Chronometer {
   }
 
   split() {
-    // return `${this.computeTwoDigitNumber(getMinutes)}:${this.computeTwoDigitNumber(this.getSeconds)}`
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
   }
 }
